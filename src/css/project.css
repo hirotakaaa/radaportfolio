@@ -1,0 +1,274 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.project-page {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  padding-top: 80px; 
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.project-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.project-content, .navbar, .logo {
+  z-index: 2;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.project-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.project-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  gap: 20px;
+  z-index: 2;
+}
+
+.project-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  width: 48%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-box:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-item {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0;
+}
+
+.project-image {
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-link {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 15px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.web-link {
+  left: 29%;
+  margin-right: 10px;
+}
+
+.github-link {
+  left: 52%;
+}
+
+.web-link::before {
+  content: "\f0ac";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.github-link::before {
+  content: "\f09b";
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.project-item:hover .project-link {
+  opacity: 1;
+}
+
+/* Responsive Design for Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .project-page {
+    padding-top: 70px; 
+    padding: 15px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .project-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .project-content h3 {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .project-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    width: 90%; 
+  }
+
+  .project-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .project-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 12px;
+  }
+
+  .web-link {
+    left: 20%;
+    margin-right: 8px;
+  }
+
+  .github-link {
+    left: 60%;
+  }
+
+  .web-link::before, .github-link::before {
+    font-size: 14px;
+  }
+}
+
+/* Responsive Design for Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .project-page {
+    padding-top: 60px;
+    padding: 10px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .project-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .project-content h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .project-container {
+    gap: 10px;
+    margin-top: 10px;
+    width: 95%;
+  }
+
+  .project-box {
+    padding: 10px;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .project-link {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+
+  .web-link {
+    left: 15%;
+    margin-right: 6px;
+  }
+
+  .github-link {
+    left: 65%;
+  }
+
+  .web-link::before, .github-link::before {
+    font-size: 12px;
+  }
+}
