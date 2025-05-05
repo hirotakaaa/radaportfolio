@@ -1,6 +1,6 @@
 import "../css/project.css";
 import projectBg from "../assets/images/woods.jpg";
-import calculatorImage from "../assets/images/scical.png";
+import calculatorImage from "../assets/images/Scical.png";
 import project2Image from "../assets/images/pokemon.png";
 import Navbar from "./navbar";
 
